@@ -13,30 +13,30 @@ function getComputerChoice(){
     
 }
 
-function playerSelection(a){
-a=prompt("What's your play")
-a=a.toLowerCase()
-return a;
+function playerSelection(userInput){
+userInput=prompt("What's your play")
+userInput=userInput.toLowerCase()
+return userInput;
 }
 
-function playRound(p,c){
-    if(p===c)
+function playRound(playerChoice,computerChoice){
+    if(playerChoice===computerChoice)
     console.log("it's a tie")
 
-if ((p=="rock"&&c=="paper")||(c=="rock"&&p=="paper"))
-    if(p=="paper"){
+if ((playerChoice=="rock"&&computerChoice=="paper")||(computerChoice=="rock"&&playerChoice=="paper"))
+    if(playerChoice=="paper"){
         console.log("you win, paper beats rock")
         return "win";}
     else console.log("you lose, paper beats rock")
 
-if ((p=="scissors"&&c=="rock")||(c=="scissors"&&p=="rock"))
-    if(p=="rock"){
+if ((playerChoice=="scissors"&&computerChoice=="rock")||(computerChoice=="scissors"&&playerChoice=="rock"))
+    if(playerChoice=="rock"){
         console.log("you win, rock beats scissors")
         return"win";}
     else  console.log("you lose, rock beats scissors")
 
-if ((p=="paper"&&c=="scissors")||(c=="paper"&&p=="scissors"))
-    if(p=="scissors"){
+if ((playerChoice=="paper"&&computerChoice=="scissors")||(computerChoice=="paper"&&playerChoice=="scissors"))
+    if(playerChoice=="scissors"){
         console.log("you win, scissors beats paper")
         return "win";}
         
