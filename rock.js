@@ -12,3 +12,9 @@ function getComputerChoice(){
     
 }
 console.log(getComputerChoice())
+
+function playerSelection(a){
+a=prompt("What's your play")
+return a;
+}
+console.log(playerSelection())
