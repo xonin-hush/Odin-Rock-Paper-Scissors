@@ -13,10 +13,13 @@ function getComputerChoice() {
 
 }
 
-function playerSelection(userInput) {
-    userInput = prompt("What's your play")
-    userInput = userInput.toLowerCase()
-    return userInput;
+function playerSelection() {
+    let userInput = prompt("What's your play")
+    if (userInput == null) {
+        return userInput = "";
+    }
+
+    return userInput.toLowerCase();
 }
 
 function playRound(playerChoice, computerChoice) {
