@@ -14,9 +14,8 @@ function getComputerChoice(){
 }
 
 function playerSelection(userInput){
-userInput=prompt("What's your play")
-userInput=userInput.toLowerCase()
-return userInput;
+    userInput=userInput.toLowerCase();
+    return userInput;
 }
 
 function playRound(playerChoice,computerChoice){
@@ -43,7 +42,18 @@ if ((playerChoice=="paper"&&computerChoice=="scissors")||(computerChoice=="paper
     else console.log("you lose, scissors beats paper")
 }
 
-function game(){
+const btn = document.querySelector('.container')
+//console.log(btn)
+btn.addEventListener('click', function(e){
+    choice=e.target.innerText; //innerText method extracts the content of a raw html.
+    console.log(choice)
+   p=playerSelection(choice)
+    console.log(p)
+    //playRound(p,c)
+   
+
+})
+/*function game(){
     score=0
     for(let i=0;i<5;i++){
         p=playerSelection()
@@ -53,6 +63,6 @@ function game(){
     if(playRound(p,c)=="win")  
         score++}
     return score}
-        console.log(game())
+        console.log(game())*/
         
     
