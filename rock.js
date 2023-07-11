@@ -49,7 +49,8 @@ btn.addEventListener('click', function(e){
     console.log(choice)
    p=playerSelection(choice)
     console.log(p)
-    //playRound(p,c)
+    c=getComputerChoice()
+    playRound(p,c)
    
 
 })
