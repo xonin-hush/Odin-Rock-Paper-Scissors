@@ -50,6 +50,11 @@ if ((playerChoice=="paper"&&computerChoice=="scissors")||(computerChoice=="paper
 let playerScore=0
 let computerScore=0
 const btn = document.querySelector('.container')
+const result=document.createElement('div')
+const computerScoreDiv=document.createElement('div')
+    computerScoreDiv.classList.add('computerScore')
+const playerScoreDiv=document.createElement('div')
+    playerScoreDiv.classList.add('playerScore')
 btn.addEventListener('click', function(e){
     choice=e.target.innerText; //innerText method extracts the content of a raw html.
    p=playerSelection(choice)
@@ -57,22 +62,26 @@ btn.addEventListener('click', function(e){
     something=playRound(p,c)
     container.appendChild(divV)
 //here starts the score system
-const result=document.createElement('div')
+
     result.classList.add('result')
     if(something=='win')
         playerScore++
-        if(something=='lose')
-            computerScore++
-            console.log(playerScore)  
-            console.log(computerScore)  
+    if(something=='lose')
+        computerScore++
+    playerScoreDiv.textContent=playerScore  
+    computerScoreDiv.textContent=computerScore  
+    container.appendChild(playerScoreDiv)
+    container.appendChild(computerScoreDiv)
+        console.log(playerScore)
+        console.log(computerScore)
     if(playerScore==5)
     result.textContent='nice you are the winner'
     if(computerScore==5)
     result.textContent='damn the computer wins'
     container.appendChild(result)
     if(computerScore>=5||playerScore>=5)
-        playerScore=0
-        computerScore=0
+        {playerScore=0
+        computerScore=0}
 
 })
 
