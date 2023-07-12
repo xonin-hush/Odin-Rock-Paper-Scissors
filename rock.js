@@ -12,6 +12,8 @@ function getComputerChoice(){
     }
     
 }
+const container=document.querySelector('.res');
+    const divV=document.createElement('div')
 
 function playerSelection(userInput){
     userInput=userInput.toLowerCase();
@@ -20,50 +22,60 @@ function playerSelection(userInput){
 
 function playRound(playerChoice,computerChoice){
     if(playerChoice===computerChoice)
-    console.log("it's a tie")
+    divV.textContent="it's a tie"
 
 if ((playerChoice=="rock"&&computerChoice=="paper")||(computerChoice=="rock"&&playerChoice=="paper"))
     if(playerChoice=="paper"){
-        console.log("you win, paper beats rock")
+        divV.textContent="you win, paper beats rock"
         return "win";}
-    else console.log("you lose, paper beats rock")
+        else {divV.textContent="you lose, paper beats rock"
+        return "lose"}
 
 if ((playerChoice=="scissors"&&computerChoice=="rock")||(computerChoice=="scissors"&&playerChoice=="rock"))
     if(playerChoice=="rock"){
-        console.log("you win, rock beats scissors")
+        divV.textContent="you win, rock beats scissors"
         return"win";}
-    else  console.log("you lose, rock beats scissors")
+        else  {divV.textContent="you lose, rock beats scissors"
+            return "lose"}
 
 if ((playerChoice=="paper"&&computerChoice=="scissors")||(computerChoice=="paper"&&playerChoice=="scissors"))
     if(playerChoice=="scissors"){
-        console.log("you win, scissors beats paper")
+        divV.textContent="you win, scissors beats paper"
         return "win";}
         
-    else console.log("you lose, scissors beats paper")
+    else {divV.textContent="you lose, scissors beats paper"
+         return "lose";}
+         
 }
-
+let playerScore=0
+let computerScore=0
 const btn = document.querySelector('.container')
-//console.log(btn)
 btn.addEventListener('click', function(e){
     choice=e.target.innerText; //innerText method extracts the content of a raw html.
-    console.log(choice)
    p=playerSelection(choice)
-    console.log(p)
     c=getComputerChoice()
-    playRound(p,c)
-   
+    something=playRound(p,c)
+    container.appendChild(divV)
+//here starts the score system
+const result=document.createElement('div')
+    result.classList.add('result')
+    if(something=='win')
+        playerScore++
+        if(something=='lose')
+            computerScore++
+            console.log(playerScore)  
+            console.log(computerScore)  
+    if(playerScore==5)
+    result.textContent='nice you are the winner'
+    if(computerScore==5)
+    result.textContent='damn the computer wins'
+    container.appendChild(result)
+    if(computerScore>=5||playerScore>=5)
+        playerScore=0
+        computerScore=0
 
 })
-/*function game(){
-    score=0
-    for(let i=0;i<5;i++){
-        p=playerSelection()
-        c=getComputerChoice()
-        console.log(c)
-        console.log(p)
-    if(playRound(p,c)=="win")  
-        score++}
-    return score}
-        console.log(game())*/
-        
-    
+
+
+
+
