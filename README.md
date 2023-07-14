@@ -1,5 +1,4 @@
-# Odin-Rock-Paper-Scissors
-# [rock-paper-scissors](https://xonin-hush.github.io/Odin-Rock-Paper-Scissors/)
+# [Odin-Rock-Paper-Scissors](https://xonin-hush.github.io/Odin-Rock-Paper-Scissors/)
 This is a project that demonstrates some DOM methods in javascript that is supposed to show or test some skills/lessons we learned at "HTML Foundations" (DOMS and methods) at [The Odin Project](https://theodinproject.com).
 
 ## Links
